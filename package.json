@@ -1,0 +1,28 @@
+{
+  "name": "node-zeropi",
+  "version": "0.0.1",
+  "description": "A node 5.0.0+ module for running a zeropi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RickCraig/node-zeropi.git"
+  },
+  "keywords": [
+    "zeropi",
+    "arduino",
+    "raspberry",
+    "pi"
+  ],
+  "author": "Rick Craig @ Receiptful <rick@receiptful.com> (https://receiptful.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RickCraig/node-zeropi/issues"
+  },
+  "homepage": "https://github.com/RickCraig/node-zeropi#readme",
+  "dependencies": {
+    "serialport": "^2.0.0"
+  }
+}
