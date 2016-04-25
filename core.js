@@ -13,6 +13,14 @@ class ZeroPiCore {
     this.selectors = {};
     this.serialPort = new SerialPort('/dev/ttyAMA0', { baudrate: 115200 });
     this.serialPort.on('open', this.onOpen);
+
+    this.serialPort.on('error', err => {
+      console.log('An error has occurred with the serial port', err);
+    });
+
+    this.serialPort.on('disconnect', () => {
+      this.log('Serial port disconnected');
+    });
   }
 
   open() {
