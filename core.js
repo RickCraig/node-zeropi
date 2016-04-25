@@ -10,6 +10,7 @@ class ZeroPiCore {
     // Serial port setup
     this.options = options || { debug: false };
     this.isOpen = false;
+    this.selectors = {};
     this.serialPort = new SerialPort('/dev/ttyAMA0', { baudrate: 115200 });
     this.serialPort.on('open', this.onOpen);
   }
