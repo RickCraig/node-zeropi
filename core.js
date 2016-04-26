@@ -53,7 +53,7 @@ class ZeroPiCore {
       }
     } else {
       const name = String(buffer.split(' OK')[0]);
-      if (this.selectors[name]) selectors[name]();
+      if (this.selectors[name]) this.selectors[name]();
     }
   }
 
