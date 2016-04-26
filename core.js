@@ -35,15 +35,11 @@ class ZeroPiCore {
       .replace(/\\n|\\r/g, '');
     this.log('Data Received: ' + result);
 
-    if (result.indexOf('\n') > -1) {
-      if (result.length > 3 && result.indexOf('OK') > -1) {
-        this.getCallback(result);
-      }
-    }
+    if (result.includes('OK')) this.getCallback(result);
   }
 
   getCallback(result) {
-    if (result.indexOf('L') > -1) {
+    if (result.includes('L')) {
       const split = result.split(' L');
 
       if (split[0]) {

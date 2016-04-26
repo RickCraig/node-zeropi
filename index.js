@@ -8,7 +8,7 @@ class ZeroPi extends ZeroPiCore {
   }
 
   digitalWrite(pin, level) {
-    this.write(`M11 D${pin} P${level}`);
+    this.write(`M11 D${pin} L${level}`);
   }
 
   pwmWrite(pin, pwm) {
