@@ -31,12 +31,11 @@ class ZeroPiCore {
   }
 
   data(data) {
-    let buffer = data.toString();
-    this.log('Data Received: ', buffer);
+    const result = data.toString('utf8')
+      .replace(/\\n|\\r/g, '');
+    this.log('Data Received: ', result);
 
     if (buffer.indexOf('\n') > -1) {
-      buffer = buffer.replace(/\\n|\\r/g, '');
-
       if (buffer.length > 3 && buffer.indexOf('OK') > -1) {
         this.getCallback(buffer);
       }
