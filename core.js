@@ -32,7 +32,7 @@ class ZeroPiCore {
 
   data(data) {
     const result = data.toString('utf8')
-      .replace(/\\n|\\r/g, '');
+      .replace(/\n|\r/g, '');
     this.log('Data Received: ' + result);
 
     if (result.includes('OK')) this.getCallback(result);
@@ -43,7 +43,7 @@ class ZeroPiCore {
       const split = result.split(' L');
 
       if (split[0]) {
-        const outcome = Number(split[1].split(' OK')[0]);
+        const outcome = parseInt(split[1].replace(' OK', ''), 10);
         this.selectors[split[0]](outcome);
       }
     } else {
