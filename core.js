@@ -33,7 +33,7 @@ class ZeroPiCore {
   data(data) {
     const result = data.toString('utf8')
       .replace(/\\n|\\r/g, '');
-    this.log('Data Received: ', result);
+    this.log('Data Received: ' + result);
 
     if (result.indexOf('\n') > -1) {
       if (result.length > 3 && result.indexOf('OK') > -1) {
@@ -63,7 +63,7 @@ class ZeroPiCore {
 
   onResult(err, results) {
     if (err) return console.log('An error has occurred during writing', err);
-    this.log(results);
+    this.log('Write results: ' + results);
   }
 
   write(str) {
