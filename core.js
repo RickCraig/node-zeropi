@@ -31,7 +31,7 @@ class ZeroPiCore {
   }
 
   data(data) {
-    let buffer = String(data);
+    let buffer = data.toString();
     this.log('Data Received: ', buffer);
 
     if (buffer.indexOf('\n') > -1) {
