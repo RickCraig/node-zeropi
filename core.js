@@ -12,7 +12,7 @@ class ZeroPiCore {
     this.isOpen = false;
     this.selectors = {};
     this.serialPort = new SerialPort('/dev/ttyAMA0', { baudrate: 115200 });
-    this.serialPort.on('open', this.onOpen);
+    this.serialPort.on('open', () => { this.open(); });
 
     this.serialPort.on('error', err => {
       console.log('An error has occurred with the serial port', err);
@@ -32,6 +32,7 @@ class ZeroPiCore {
 
   data(data) {
     let buffer = String(data);
+    this.log('Data Received: ', buffer);
 
     if (buffer.indexOf('\n') > -1) {
       buffer = buffer.replace(/\\n|\\r/g, '');
@@ -68,7 +69,9 @@ class ZeroPiCore {
 
   write(str) {
     if (this.isOpen) {
-      this.serialPort.write(`\n${str}\n`, this.onResult);
+      this.serialPort.write(`\n${str}\n`, (err, results) => {
+        this.onResult(err, results);
+      });
     }
   }
 }
