@@ -35,23 +35,23 @@ class ZeroPiCore {
       .replace(/\\n|\\r/g, '');
     this.log('Data Received: ', result);
 
-    if (buffer.indexOf('\n') > -1) {
-      if (buffer.length > 3 && buffer.indexOf('OK') > -1) {
-        this.getCallback(buffer);
+    if (result.indexOf('\n') > -1) {
+      if (result.length > 3 && result.indexOf('OK') > -1) {
+        this.getCallback(result);
       }
     }
   }
 
-  getCallback(buffer) {
-    if (buffer.indexOf('L') > -1) {
-      const split = buffer.split(' L');
+  getCallback(result) {
+    if (result.indexOf('L') > -1) {
+      const split = result.split(' L');
 
       if (split[0]) {
-        const result = Number(split[1].split(' OK')[0]);
-        this.selectors[split[0]](result);
+        const outcome = Number(split[1].split(' OK')[0]);
+        this.selectors[split[0]](outcome);
       }
     } else {
-      const name = String(buffer.split(' OK')[0]);
+      const name = String(result.split(' OK')[0]);
       if (this.selectors[name]) this.selectors[name]();
     }
   }
