@@ -42,7 +42,7 @@ class ZeroPiCore {
     if (result.includes('L')) {
       const split = result.split(' L');
 
-      if (split[0]) {
+      if (split[0] && this.selectors[split[0]] && split[1]) {
         const outcome = parseInt(split[1].replace(' OK', ''), 10);
         this.selectors[split[0]](outcome);
       }
