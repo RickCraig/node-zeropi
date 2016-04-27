@@ -12,11 +12,10 @@ You will need the following:
 
 - A Raspberry Pi (I have tested it on a RPi 2)
 - A ZeroPi
-- A Power Supply (To run motor(s))
-..- I scavenged a 12v 1A DC PSU off an old Linksys router
+- A Power Supply (To run motor(s), I scavenged a 12v 1A DC PSU off an old Linksys router)
 - A Power Supply (To run the RPi)
 
-The rest is up to you, I bought a Nema 23 Stepper motor and a stepper motor driver online.
+The rest is up to you, I bought a Nema 23 Stepper motor and a stepper motor driver online to start me off.
 
 ### Software
 
@@ -68,11 +67,12 @@ If you have your own way of setting up node feel free to do it your way. I did t
 1. In terminal: `sudo apt-get install npm`
 2. Once npm is installed get 'n' which is a node version manager: `sudo npm install n -g`
 3. Once 'n' is installed get the latest version of node: `n latest`
-4. This should download and install the latest version of node. To check: `node --version` (as of today that will be 6.0.0)
+
+This should download and install the latest version of node. To check: `node --version` (as of today that will be 6.0.0)
 
 ## Setting up a node app with the ZeroPi node module
 
-This will detail the setup of your application. If you know how to do this already, skip to [Basic Usage](Basic Usage).
+This will detail the setup of your application. If you know how to do this already, skip to [Basic Usage](#Basic-Usage).
 
 - Create a folder for your app in a location of your choice: `mkdir MyApp`
 - Enter the directory: `cd MyApp`
@@ -94,7 +94,7 @@ zeropi.onOpen(() => {
 });
 ```
 
-**Note: you must always call the action functions after the serial port has been opened. Doing it before will have no effect**
+**Note: you must always call the main methods after the serial port has been opened. Doing it before will have no effect**
 
 ## How Devices/Pins Work
 
@@ -155,7 +155,7 @@ zeropi.onOpen(() => {
 
 _pwmWrite(pin, pwm)_
 
-see [here](https://www.arduino.cc/en/Tutorial/PWM) for an explanation of PWM
+See [here](https://www.arduino.cc/en/Tutorial/PWM) for an explanation of PWM
 - Pin: number (I don't know what the range is at the moment...)
 - PWM: -255 - 255
 
@@ -211,8 +211,8 @@ zeropi.onOpen(() => {
 
 _dcMotorRun(device, pwm)_
 
-see [here](https://www.arduino.cc/en/Tutorial/PWM) for an explanation of PWM
-- Device: see [How Devices/Pins Work](How Devices/Pins Work)
+See [here](https://www.arduino.cc/en/Tutorial/PWM) for an explanation of PWM
+- Device: see [How Devices/Pins Work](#How-Devices/Pins-Work)
 - PWM: -255 - 255
 
 ```javascript
@@ -229,7 +229,7 @@ zeropi.onOpen(() => {
 
 _dcMotorStop(device)_
 
-- Device: see [How Devices/Pins Work](How Devices/Pins Work)
+- Device: see [How Devices/Pins Work](#How-Devices/Pins-Work)
 
 ```javascript
 const ZeroPi = require('zeropi');
@@ -245,7 +245,7 @@ zeropi.onOpen(() => {
 
 _stepperRun(device, speed)_
 
-- Device: see [How Devices/Pins Work](How Devices/Pins Work)
+- Device: see [How Devices/Pins Work](#How-Devices/Pins-Work)
 - Speed: 0 - 20000
 
 ```javascript
@@ -262,7 +262,7 @@ zeropi.onOpen(() => {
 
 _stepperMove(device, distance, speed, callback)_
 
-- Device: see [How Devices/Pins Work](How Devices/Pins Work)
+- Device: see [How Devices/Pins Work](#How-Devices/Pins-Work)
 - Distance: Any number (both positive and negative)
 - Speed: 0 - 20000
 - Callback: function
@@ -283,7 +283,7 @@ zeropi.onOpen(() => {
 
 _stepperMoveTo(device, position, speed, callback)_
 
-- Device: see [How Devices/Pins Work](How Devices/Pins Work)
+- Device: see [How Devices/Pins Work](#How-Devices/Pins-Work)
 - Position: Any number (both positive and negative)
 - Speed: 0 - 20000
 - Callback: function
@@ -304,7 +304,7 @@ zeropi.onOpen(() => {
 
 _stepperStop(device)_
 
-- Device: see [How Devices/Pins Work](How Devices/Pins Work)
+- Device: see [How Devices/Pins Work](#How-Devices/Pins-Work)
 
 ```javascript
 const ZeroPi = require('zeropi');
@@ -348,7 +348,7 @@ zeropi.onOpen(() => {
 
 _stepperSetting(device, microstep, acceleration)_
 
-- Device: see [How Devices/Pins Work](How Devices/Pins Work)
+- Device: see [How Devices/Pins Work](#How-Devices/Pins-Work)
 - Microstep: 1, 2, 4, 8, 16
 - Acceleration: 0 - 20000
 
@@ -366,7 +366,7 @@ zeropi.onOpen(() => {
 
 _servoRun(device, angle)_
 
-- Device: see [How Devices/Pins Work](How Devices/Pins Work)
+- Device: see [How Devices/Pins Work](#How-Devices/Pins-Work)
 - Angle: 0 - 180
 
 ```javascript
