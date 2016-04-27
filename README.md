@@ -1,5 +1,7 @@
 # ZeroPi node module for RaspberryPi
 
+[![Build Status](https://travis-ci.org/RickCraig/node-zeropi.svg?branch=master)](https://travis-ci.org/RickCraig/node-zeropi)
+
 I took it upon myself to rewrite the original node module developed by the [creators](http://www.makeblock.cc/) of [ZeroPi](https://www.kickstarter.com/projects/1204283/zeropi-arduino-and-raspberry-pi-compatible-develop), which can be found [here](https://github.com/ZeroPiProject/NodeForZeroPi).
 
 The function names are the same, and so are the arguments passed to them. I just felt like the original code needed 'a bit of work'.
