@@ -1,6 +1,6 @@
 {
   "name": "zeropi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A node 5.0.0+ module for running a zeropi",
   "main": "lib/zeropi.js",
   "scripts": {
