@@ -80,9 +80,14 @@ This will detail the setup of your application. If you know how to do this alrea
 - Enter the directory: `cd MyApp`
 - Initialise npm in the app: `npm init`
 - Fill in all the details to suit (or hit enter until finished to get a basic setup)
+- Use npm to install the `zeropi` module: `npm install zeropi --save` (this will save the reference to the module in your package.json file)
 - Create an index.js (or whatever you want to name it)
 
 ## Basic Usage
+
+```
+npm install zeropi --save
+```
 
 ```javascript
 const ZeroPi = require('zeropi');
